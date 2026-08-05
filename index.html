@@ -36,9 +36,8 @@
       </a>
       <div class="navbar-nav" id="navbar-nav">
         <a href="#about" class="navbar-link">Sobre</a>
-        <a href="#appliances" class="navbar-link">Equipamentos</a>
-        <a href="#services" class="navbar-link">Serviços</a>
-        <a href="#cases" class="navbar-link">Casos</a>
+        <a href="#brands" class="navbar-link">Marcas</a>
+        <a href="#technical-hub" class="navbar-link">Hub Técnico</a>
         <a href="#partnerships" class="navbar-link">Parcerias</a>
         <a href="#contact" class="navbar-link">Contato</a>
         <a href="https://wa.me/5541999999999?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20atendimento%20t%C3%A9cnico%20especializado." class="navbar-cta" target="_blank" rel="noopener noreferrer">Solicitar Atendimento</a>
@@ -54,9 +53,8 @@
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobile-menu">
     <a href="#about" class="mobile-link">Sobre</a>
-    <a href="#appliances" class="mobile-link">Equipamentos</a>
-    <a href="#services" class="mobile-link">Serviços</a>
-    <a href="#cases" class="mobile-link">Casos</a>
+    <a href="#brands" class="mobile-link">Marcas</a>
+    <a href="#technical-hub" class="mobile-link">Hub Técnico</a>
     <a href="#partnerships" class="mobile-link">Parcerias</a>
     <a href="#contact" class="mobile-link">Contato</a>
     <a href="https://wa.me/5541999999999?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20atendimento%20t%C3%A9cnico%20especializado." class="mobile-link" target="_blank" rel="noopener noreferrer" style="color: var(--color-champagne);">Solicitar Atendimento</a>
@@ -81,7 +79,7 @@
     </div>
   </section>
 
-  <!-- ========== INVESTMENT (Emotional Connection + Exclusivity) ========== -->
+  <!-- ========== INVESTMENT (Emotional Connection) ========== -->
   <section class="section investment" id="investment">
     <div class="container">
       <div class="investment-content">
@@ -94,7 +92,6 @@
           <p class="reveal reveal-delay-5">Estamos falando de equipamentos projetados para entregar desempenho, durabilidade e experiência superiores.</p>
           <p class="reveal reveal-delay-6">A Vertex existe para preservar exatamente isso.</p>
         </div>
-
       </div>
     </div>
   </section>
@@ -164,143 +161,222 @@
     </div>
   </section>
 
-  <!-- ========== APPLIANCES CATEGORIES ========== -->
-  <section class="section appliances" id="appliances">
+  <!-- ========== TECHNICAL HUB (Interactive 3D Hub with Tabs) ========== -->
+  <section class="section technical-hub" id="technical-hub">
     <div class="container">
-      <p class="section-label reveal">Linhas Atendidas</p>
-      <h2 class="section-title reveal reveal-delay-1">Equipamentos que Atendemos</h2>
-      <p class="section-subtitle reveal reveal-delay-2">Especialização técnica focada nas principais categorias de alta gastronomia e refrigeração de luxo.</p>
-      <div class="line-deco reveal reveal-delay-3"></div>
+      <div class="hub-header text-center">
+        <p class="section-label reveal">Especialização Técnica</p>
+        <h2 class="section-title reveal reveal-delay-1">Hub Técnico Vertex</h2>
+        <p class="section-subtitle reveal reveal-delay-2 mx-auto">Explore nossas soluções, linhas atendidas e histórico de intervenções técnicas sem precisar rolar páginas extensas.</p>
+      </div>
 
-      <div class="appliances-grid">
-        <div class="appliance-card reveal reveal-delay-1">
-          <div class="appliance-header">
-            <span class="appliance-tag">Refrigeração de Alta Precisão</span>
+      <!-- TAB NAVIGATION BAR -->
+      <div class="hub-tabs-container reveal reveal-delay-3">
+        <button class="hub-tab active" data-tab="equipamentos">
+          <span class="hub-tab-num">01</span>
+          <span class="hub-tab-text">Linhas Atendidas</span>
+        </button>
+        <button class="hub-tab" data-tab="servicos">
+          <span class="hub-tab-num">02</span>
+          <span class="hub-tab-text">Serviços Especializados</span>
+        </button>
+        <button class="hub-tab" data-tab="casos">
+          <span class="hub-tab-num">03</span>
+          <span class="hub-tab-text">Casos de Atendimento</span>
+        </button>
+      </div>
+
+      <!-- TAB PANELS CONTAINER -->
+      <div class="hub-panels">
+
+        <!-- PANEL 1: EQUIPAMENTOS -->
+        <div class="hub-panel active" id="panel-equipamentos">
+          <div class="hub-grid">
+            <div class="hub-card" data-deep-title="Refrigeradores Premium & Side by Side" data-deep-badge="Refrigeração de Alta Precisão" data-deep-desc="Sistemas de refrigeração dual, compressores inverter e vedação magnética de alta eficiência. Trabalhamos com reativação de circuito selado, troca de filtros de ar/água calibrados e alinhamento de portas magnéticas das marcas Sub-Zero, Viking e Liebherr.">
+              <div class="hub-card-3d">
+                <img src="assets/images/3d/appliance_refrigerator_3d.png" alt="Refrigeradores Dual-Cooling 3D" class="floating-3d" loading="lazy">
+              </div>
+              <div class="hub-card-body">
+                <span class="hub-card-tag">Refrigeração</span>
+                <h3 class="hub-card-title">Refrigeradores & Side by Side</h3>
+                <p class="hub-card-snippet">Circuito selado dual, compressores inverter e vedação hermética Sub-Zero e Viking.</p>
+                <button class="hub-card-btn">Ver Detalhes Técnicos &rarr;</button>
+              </div>
+            </div>
+
+            <div class="hub-card" data-deep-title="Adegas Climatizadas de Alta Precisão" data-deep-badge="Controle Térmico & Umidade" data-deep-desc="Adegas com controle eletrônico microprocessado de múltiplas zonas de temperatura, amortecimento de vibração para conservação de rótulos raros e filtros de carvão ativado.">
+              <div class="hub-card-3d">
+                <img src="assets/images/3d/appliance_wine_3d.png" alt="Adegas Climatizadas 3D" class="floating-3d" loading="lazy">
+              </div>
+              <div class="hub-card-body">
+                <span class="hub-card-tag">Climatização</span>
+                <h3 class="hub-card-title">Adegas Climatizadas</h3>
+                <p class="hub-card-snippet">Múltiplas zonas de temperatura, amortecimento de vibração e umidade ativa.</p>
+                <button class="hub-card-btn">Ver Detalhes Técnicos &rarr;</button>
+              </div>
+            </div>
+
+            <div class="hub-card" data-deep-title="Fornos Profissionais & Rangetops" data-deep-badge="Gastronomia de Alto Desempenho" data-deep-desc="Fornos de convecção tripla, queimadores selados de alta caloria (BTU), calibração de termostatos de precisão e aferição de estanqueidade para Wolf, Gaggenau e Bertazzoni.">
+              <div class="hub-card-3d">
+                <img src="assets/images/3d/appliance_knob_3d.png" alt="Fornos Profissionais 3D" class="floating-3d" loading="lazy">
+              </div>
+              <div class="hub-card-body">
+                <span class="hub-card-tag">Cocção</span>
+                <h3 class="hub-card-title">Fornos Profissionais & Rangetops</h3>
+                <p class="hub-card-snippet">Convecção tripla, queimadores de alta caloria e calibração térmica de precisão.</p>
+                <button class="hub-card-btn">Ver Detalhes Técnicos &rarr;</button>
+              </div>
+            </div>
+
+            <div class="hub-card" data-deep-title="Cooktops & Coifas de Alta Performance" data-deep-badge="Exhaust & Induction Systems" data-deep-desc="Sistemas de indução magnética de alta frequência, placas de acionamento sensíveis ao toque e coifas industriais de alta vazão acústica para cozinhas gourmet de alto padrão.">
+              <div class="hub-card-3d">
+                <img src="assets/images/3d/appliance_cooktop_3d.png" alt="Cooktops e Coifas 3D" class="floating-3d" loading="lazy">
+              </div>
+              <div class="hub-card-body">
+                <span class="hub-card-tag">Indução & Exhaust</span>
+                <h3 class="hub-card-title">Cooktops & Coifas</h3>
+                <p class="hub-card-snippet">Indução magnética avançada e exaustão silenciosa de alta vazão m³/h.</p>
+                <button class="hub-card-btn">Ver Detalhes Técnicos &rarr;</button>
+              </div>
+            </div>
+
+            <div class="hub-card" data-deep-title="Lava-Louças & Sistemas Integrados" data-deep-badge="Sanitização & Encastre" data-deep-desc="Lava-louças profissionais com ciclos de alta temperatura para louças delicadas, gavetas aquecidas gourmet e sistemas de automação de água Miele e Gaggenau.">
+              <div class="hub-card-3d">
+                <img src="assets/images/3d/appliance_dishwasher_3d.png" alt="Lava Louças 3D" class="floating-3d" loading="lazy">
+              </div>
+              <div class="hub-card-body">
+                <span class="hub-card-tag">Higienização</span>
+                <h3 class="hub-card-title">Lava-Louças & Integrados</h3>
+                <p class="hub-card-snippet">Ciclos de sanitização em alta temperatura e gavetas aquecidas gourmet.</p>
+                <button class="hub-card-btn">Ver Detalhes Técnicos &rarr;</button>
+              </div>
+            </div>
           </div>
-          <h3 class="appliance-title">Refrigeradores Premium & Side by Side</h3>
-          <p class="appliance-desc">Sistemas de refrigeração dual, compressores inverter e vedação magnética de marcas como Sub-Zero, Viking e Liebherr.</p>
         </div>
 
-        <div class="appliance-card reveal reveal-delay-2">
-          <div class="appliance-header">
-            <span class="appliance-tag">Controle Térmico Avançado</span>
+        <!-- PANEL 2: SERVIÇOS -->
+        <div class="hub-panel" id="panel-servicos">
+          <div class="hub-grid">
+            <div class="hub-card" data-deep-title="Diagnóstico Técnico de Precisão" data-deep-badge="Serviço 01" data-deep-desc="Análise lógica com relatórios fotográficos e medição eletrônica de parâmetros de fábrica. Identificamos com exatidão a causa raiz de qualquer anomalia antes de efetuar qualquer substituição.">
+              <div class="hub-card-3d">
+                <img src="assets/images/3d/service_diagnostic_3d.png" alt="Diagnóstico 3D" class="floating-3d" loading="lazy">
+              </div>
+              <div class="hub-card-body">
+                <span class="hub-card-tag">01 · Análise</span>
+                <h3 class="hub-card-title">Diagnóstico Técnico</h3>
+                <p class="hub-card-snippet">Mapeamento preciso de anomalias e emissão de relatório técnico fundamentado.</p>
+                <button class="hub-card-btn">Ver Procedimento &rarr;</button>
+              </div>
+            </div>
+
+            <div class="hub-card" data-deep-title="Instalação Premium Certificada" data-deep-badge="Serviço 02" data-deep-desc="Execução estrita dos manuais técnicos dos fabricantes importados. Verificação técnica de nichos, alinhamento micrométrico, aterramento elétrico e estanqueidade de gás.">
+              <div class="hub-card-3d">
+                <img src="assets/images/3d/service_installation_3d.png" alt="Instalação 3D" class="floating-3d" loading="lazy">
+              </div>
+              <div class="hub-card-body">
+                <span class="hub-card-tag">02 · Instalação</span>
+                <h3 class="hub-card-title">Instalação Premium</h3>
+                <p class="hub-card-snippet">Adequação técnica perfeita seguindo todas as normas internacionais da fábrica.</p>
+                <button class="hub-card-btn">Ver Procedimento &rarr;</button>
+              </div>
+            </div>
+
+            <div class="hub-card" data-deep-title="Manutenção Especializada (Preventiva & Corretiva)" data-deep-badge="Serviço 03" data-deep-desc="Utilização exclusiva de peças originais importadas e instrumentação dedicada. Garantimos a manutenção do valor de revenda e durabilidade de longo prazo do equipamento.">
+              <div class="hub-card-3d">
+                <img src="assets/images/3d/service_maintenance_3d.png" alt="Manutenção 3D" class="floating-3d" loading="lazy">
+              </div>
+              <div class="hub-card-body">
+                <span class="hub-card-tag">03 · Manutenção</span>
+                <h3 class="hub-card-title">Manutenção Especializada</h3>
+                <p class="hub-card-snippet">Preventiva rigorosa e corretiva de alta precisão com componentes originais.</p>
+                <button class="hub-card-btn">Ver Procedimento &rarr;</button>
+              </div>
+            </div>
+
+            <div class="hub-card" data-deep-title="Consultoria Técnica de Projetos" data-deep-badge="Serviço 04" data-deep-desc="Acompanhamento técnico para proprietários, arquitetos e engenheiros na escolha de pontos de pré-instalação, especificações de carga elétrica e tubulações de exaustão.">
+              <div class="hub-card-3d">
+                <img src="assets/images/3d/service_consulting_3d.png" alt="Consultoria 3D" class="floating-3d" loading="lazy">
+              </div>
+              <div class="hub-card-body">
+                <span class="hub-card-tag">04 · Consultoria</span>
+                <h3 class="hub-card-title">Consultoria Técnica</h3>
+                <p class="hub-card-snippet">Orientação consultiva para prevenção de erros de especificação em projetos gourmet.</p>
+                <button class="hub-card-btn">Ver Procedimento &rarr;</button>
+              </div>
+            </div>
+
+            <div class="hub-card" data-deep-title="Suporte Técnico Dedicado" data-deep-badge="Serviço 05" data-deep-desc="Canal direto com nossos especialistas para esclarecimento de manuseio, parametrização de receitas nos fornos e auxílio operacional para a equipe da residência.">
+              <div class="hub-card-3d">
+                <img src="assets/images/3d/service_support_3d.png" alt="Suporte 3D" class="floating-3d" loading="lazy">
+              </div>
+              <div class="hub-card-body">
+                <span class="hub-card-tag">05 · Suporte</span>
+                <h3 class="hub-card-title">Suporte Técnico</h3>
+                <p class="hub-card-snippet">Atendimento contínuo e orientação de uso para preservação do equipamento.</p>
+                <button class="hub-card-btn">Ver Procedimento &rarr;</button>
+              </div>
+            </div>
           </div>
-          <h3 class="appliance-title">Adegas Climatizadas</h3>
-          <p class="appliance-desc">Adegas de alta precisão com múltiplas zonas de temperatura, controle de umidade e filtragem de ar ativado.</p>
         </div>
 
-        <div class="appliance-card reveal reveal-delay-3">
-          <div class="appliance-header">
-            <span class="appliance-tag">Gastronomia Profissional</span>
+        <!-- PANEL 3: CASOS DE ATENDIMENTO -->
+        <div class="hub-panel" id="panel-casos">
+          <div class="hub-grid">
+            <div class="hub-card" data-deep-title="Sub-Zero: Recuperação de Sistema de Refrigeração Dual" data-deep-badge="Caso Histórico 01" data-deep-desc="Reativação com precisão de parâmetros de fábrica em refrigerador Sub-Zero encastrado de alta complexidade. Diagnóstico de vazamento microduto e recarga hermética com vácuo profundo.">
+              <div class="hub-card-body">
+                <span class="hub-card-tag">Sub-Zero</span>
+                <h3 class="hub-card-title">Recuperação de Refrigeração Dual</h3>
+                <p class="hub-card-snippet">Reativação de circuito selado e reestabelecimento de temperatura/umidade de fábrica.</p>
+                <button class="hub-card-btn">Ver Resumo do Caso &rarr;</button>
+              </div>
+            </div>
+
+            <div class="hub-card" data-deep-title="Viking: Instalação & Calibração de Range Industrial" data-deep-badge="Caso Histórico 02" data-deep-desc="Instalação e alinhamento milimétrico de range industrial Viking em ilha gourmet, incluindo engenharia de vazão de gás, teste de estanqueidade e calibração de manípulos.">
+              <div class="hub-card-body">
+                <span class="hub-card-tag">Viking</span>
+                <h3 class="hub-card-title">Instalação & Calibração de Range</h3>
+                <p class="hub-card-snippet">Alinhamento milimétrico em ilha gourmet e aferição de exaustão de alta temperatura.</p>
+                <button class="hub-card-btn">Ver Resumo do Caso &rarr;</button>
+              </div>
+            </div>
+
+            <div class="hub-card" data-deep-title="Wolf: Manutenção Preventiva e Peças Originais" data-deep-badge="Caso Histórico 03" data-deep-desc="Revisão periódica completa em cooktop e forno Wolf, com substituição de válvulas de segurança termoelétricas originais e polimento das trempes de ferro fundido.">
+              <div class="hub-card-body">
+                <span class="hub-card-tag">Wolf</span>
+                <h3 class="hub-card-title">Manutenção & Válvulas Originais</h3>
+                <p class="hub-card-snippet">Troca preventiva de componentes de segurança e ajuste de chama contínua.</p>
+                <button class="hub-card-btn">Ver Resumo do Caso &rarr;</button>
+              </div>
+            </div>
+
+            <div class="hub-card" data-deep-title="Gaggenau: Parametrização Eletrônica de Vapor" data-deep-badge="Caso Histórico 04" data-deep-desc="Diagnóstico avançado via scanner em forno combinado a vapor Gaggenau Serie 400. Substituição da placa lógica principal e reconfiguração dos sensores de umidade.">
+              <div class="hub-card-body">
+                <span class="hub-card-tag">Gaggenau</span>
+                <h3 class="hub-card-title">Parametrização Eletrônica de Vapor</h3>
+                <p class="hub-card-snippet">Diagnóstico eletrônico em forno combinado e recodificação do módulo térmico.</p>
+                <button class="hub-card-btn">Ver Resumo do Caso &rarr;</button>
+              </div>
+            </div>
           </div>
-          <h3 class="appliance-title">Fornos Profissionais & Rangetops</h3>
-          <p class="appliance-desc">Fornos a gás e elétricos de convecção tripla, rangetops de alta caloria e sistemas de cocção de precisão da Wolf, Gaggenau e Bertazzoni.</p>
         </div>
 
-        <div class="appliance-card reveal reveal-delay-4">
-          <div class="appliance-header">
-            <span class="appliance-tag">Cocção & Exaustão</span>
-          </div>
-          <h3 class="appliance-title">Cooktops & Coifas de Alta Performance</h3>
-          <p class="appliance-desc">Sistemas de indução, queimadores selados de alto rendimento e coifas com motores de alta capacidade e filtragem acústica.</p>
-        </div>
-
-        <div class="appliance-card reveal reveal-delay-5">
-          <div class="appliance-header">
-            <span class="appliance-tag">Integração & Higienização</span>
-          </div>
-          <h3 class="appliance-title">Lava-Louças & Sistemas Integrados</h3>
-          <p class="appliance-desc">Lava-louças de encastre com ciclos de alta temperatura, lavadoras profissionais Miele e gavetas aquecidas gourmet.</p>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== SERVICES ========== -->
-  <section class="section services" id="services">
-    <div class="container">
-      <div class="services-header">
-        <p class="section-label reveal">O que fazemos</p>
-        <h2 class="section-title reveal reveal-delay-1">Serviços Especializados</h2>
-        <p class="section-subtitle reveal reveal-delay-2">Cada equipamento exige um nível de conhecimento específico. Nós entregamos exatamente isso.</p>
-      </div>
-      <div class="services-grid">
-        <div class="service-card reveal reveal-delay-1">
-          <span class="service-number">01</span>
-          <h3 class="service-title">Diagnóstico Técnico</h3>
-          <p class="service-desc">Análise detalhada com relatório técnico completo. Identificamos com precisão a origem de cada problema antes de qualquer intervenção.</p>
-        </div>
-        <div class="service-card reveal reveal-delay-2">
-          <span class="service-number">02</span>
-          <h3 class="service-title">Instalação Premium</h3>
-          <p class="service-desc">Instalação rigorosa seguindo as normas e especificações técnicas do fabricante. Cada detalhe importa.</p>
-        </div>
-        <div class="service-card reveal reveal-delay-3">
-          <span class="service-number">03</span>
-          <h3 class="service-title">Manutenção Especializada</h3>
-          <p class="service-desc">Manutenção preventiva e corretiva com peças originais e procedimentos técnicos certificados.</p>
-        </div>
-        <div class="service-card reveal reveal-delay-4">
-          <span class="service-number">04</span>
-          <h3 class="service-title">Consultoria Técnica</h3>
-          <p class="service-desc">Orientação especializada para decisões técnicas sobre seus equipamentos. Suporte consultivo que vai além do reparo.</p>
-        </div>
-        <div class="service-card reveal reveal-delay-5">
-          <span class="service-number">05</span>
-          <h3 class="service-title">Suporte Técnico</h3>
-          <p class="service-desc">Atendimento consultivo e acompanhamento contínuo. Estamos disponíveis para garantir a melhor performance dos seus equipamentos.</p>
-        </div>
+  <!-- DEEP-DIVE MODAL / DRAWER -->
+  <div class="hub-drawer-overlay" id="hub-drawer">
+    <div class="hub-drawer-content">
+      <button class="hub-drawer-close" id="hub-drawer-close" aria-label="Fechar detalhamento">&times;</button>
+      <span class="hub-drawer-badge" id="drawer-badge">Detalhamento Técnico</span>
+      <h3 class="hub-drawer-title" id="drawer-title">Título do Item</h3>
+      <div class="line-deco"></div>
+      <p class="hub-drawer-desc" id="drawer-desc">Descrição detalhada...</p>
+      <div class="hub-drawer-footer">
+        <a href="https://wa.me/5541999999999?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20atendimento%20t%C3%A9cnico%20relacionado%20a%20este%20item." class="hub-drawer-cta" target="_blank" rel="noopener noreferrer">Solicitar Atendimento sobre este Item</a>
       </div>
     </div>
-  </section>
-
-  <!-- ========== CASES (Prova Social) ========== -->
-  <section class="section cases" id="cases">
-    <div class="container">
-      <p class="section-label reveal">Prova Social & Histórico</p>
-      <h2 class="section-title reveal reveal-delay-1">Casos de Atendimento</h2>
-      <p class="section-subtitle reveal reveal-delay-2">Exemplos reais de intervenções técnicas de alta complexidade em equipamentos de alto padrão.</p>
-      <div class="line-deco reveal reveal-delay-3"></div>
-
-      <div class="cases-grid">
-        <div class="case-card reveal reveal-delay-1">
-          <div class="case-brand-tag">Sub-Zero</div>
-          <h3 class="case-title">Diagnóstico e recuperação de sistema de refrigeração dual</h3>
-          <p class="case-desc">Reativação com precisão de parâmetros de fábrica em refrigerador encastrado de alta complexidade, restabelecendo temperatura e umidade exatas.</p>
-          <div class="case-footer">
-            <span class="case-spec">Refrigeração Dual · Selado</span>
-          </div>
-        </div>
-
-        <div class="case-card reveal reveal-delay-2">
-          <div class="case-brand-tag">Viking</div>
-          <h3 class="case-title">Instalação técnica e calibração de forno profissional</h3>
-          <p class="case-desc">Instalação e alinhamento milimétrico de range industrial em ilha gourmet, incluindo adequação de pressão de gás e teste de exaustão.</p>
-          <div class="case-footer">
-            <span class="case-spec">Cocção Industrial · Gás & Elétrico</span>
-          </div>
-        </div>
-
-        <div class="case-card reveal reveal-delay-3">
-          <div class="case-brand-tag">Wolf</div>
-          <h3 class="case-title">Manutenção preventiva e aferição de precisão</h3>
-          <p class="case-desc">Revisão periódica de queimadores selados, substituição de válvulas de segurança originais e ajuste de resposta dos manípulos metálicos.</p>
-          <div class="case-footer">
-            <span class="case-spec">Manutenção Preventiva · Peças Originais</span>
-          </div>
-        </div>
-
-        <div class="case-card reveal reveal-delay-4">
-          <div class="case-brand-tag">Gaggenau</div>
-          <h3 class="case-title">Parametrização eletrônica e substituição de componentes</h3>
-          <p class="case-desc">Diagnóstico lógico de erro de placa e substituição de módulo eletrônico em forno combinado a vapor de última geração.</p>
-          <div class="case-footer">
-            <span class="case-spec">Eletrônica Avançada · Vapor Integrado</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  </div>
 
   <!-- ========== PARTNERSHIPS (Bloco para Arquitetos & Designers) ========== -->
   <section class="section partnerships" id="partnerships">
@@ -327,7 +403,7 @@
             </div>
             <div class="partner-item">
               <div class="partner-bullet"></div>
-              <span>Construtoras & Incorporadoras de Alto Padrão</span>
+              <span>Construtoras & Incorporadoras de Luxo</span>
             </div>
           </div>
         </div>
@@ -478,9 +554,7 @@
         </div>
         <div class="footer-links">
           <a href="#about" class="footer-link">Sobre</a>
-          <a href="#appliances" class="footer-link">Equipamentos</a>
-          <a href="#services" class="footer-link">Serviços</a>
-          <a href="#cases" class="footer-link">Casos</a>
+          <a href="#technical-hub" class="footer-link">Hub Técnico</a>
           <a href="#partnerships" class="footer-link">Parcerias</a>
           <a href="#contact" class="footer-link">Contato</a>
         </div>

@@ -101,6 +101,9 @@ input, textarea, select {
   padding: 0 var(--container-padding);
 }
 
+.text-center { text-align: center; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+
 /* --- Section Base --- */
 .section {
   padding: var(--section-padding) 0;
@@ -329,13 +332,6 @@ input, textarea, select {
   opacity: 1;
 }
 
-.mobile-menu.open .mobile-link:nth-child(1) { transition-delay: 0.1s; }
-.mobile-menu.open .mobile-link:nth-child(2) { transition-delay: 0.15s; }
-.mobile-menu.open .mobile-link:nth-child(3) { transition-delay: 0.2s; }
-.mobile-menu.open .mobile-link:nth-child(4) { transition-delay: 0.25s; }
-.mobile-menu.open .mobile-link:nth-child(5) { transition-delay: 0.3s; }
-.mobile-menu.open .mobile-link:nth-child(6) { transition-delay: 0.35s; }
-
 .mobile-link:hover {
   color: var(--color-champagne);
 }
@@ -495,7 +491,7 @@ input, textarea, select {
 }
 
 /* ============================================
-   INVESTMENT SECTION (Emotional Connection + Exclusivity)
+   INVESTMENT SECTION
    ============================================ */
 .investment {
   background: var(--color-deep);
@@ -527,36 +523,6 @@ input, textarea, select {
 .investment-text p:last-child {
   color: var(--color-champagne);
   font-weight: 400;
-}
-
-/* Exclusivity Highlight Card */
-.exclusivity-card {
-  margin-top: 3.5rem;
-  padding: 2rem 2.5rem;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  position: relative;
-  overflow: hidden;
-}
-
-.exclusivity-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 3px;
-  background: var(--color-champagne);
-}
-
-.exclusivity-quote {
-  font-size: clamp(1.0625rem, 1.8vw, 1.25rem);
-  font-weight: 400;
-  font-style: italic;
-  color: var(--color-offwhite);
-  line-height: 1.6;
-  letter-spacing: 0.02em;
 }
 
 /* ============================================
@@ -618,7 +584,7 @@ input, textarea, select {
 }
 
 /* ============================================
-   BEHIND (Quem está por trás)
+   BEHIND
    ============================================ */
 .behind {
   background: var(--color-deep);
@@ -656,10 +622,6 @@ input, textarea, select {
 
 .behind-text .section-subtitle {
   margin-bottom: 1rem;
-}
-
-.behind-text .section-subtitle + .section-subtitle {
-  margin-top: 0;
 }
 
 .behind-quote {
@@ -719,39 +681,140 @@ input, textarea, select {
 }
 
 /* ============================================
-   APPLIANCES CATEGORIES
+   TECHNICAL HUB (INTERACTIVE 3D HUB WITH TABS)
    ============================================ */
-.appliances {
+.technical-hub {
   background: var(--color-deep);
 }
 
-.appliances-grid {
+.hub-header {
+  margin-bottom: 3rem;
+}
+
+/* Tabs Bar */
+.hub-tabs-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.hub-tab {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1.75rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-gray);
+  transition: all var(--transition-base);
+}
+
+.hub-tab-num {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-muted);
+}
+
+.hub-tab-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.hub-tab:hover {
+  border-color: rgba(201, 168, 105, 0.4);
+  color: var(--color-offwhite);
+}
+
+.hub-tab.active {
+  background: var(--color-elevated);
+  border-color: var(--color-champagne);
+  color: var(--color-offwhite);
+  box-shadow: 0 4px 20px rgba(201, 168, 105, 0.15);
+}
+
+.hub-tab.active .hub-tab-num {
+  color: var(--color-champagne);
+}
+
+/* Panels */
+.hub-panels {
+  position: relative;
+  min-height: 400px;
+}
+
+.hub-panel {
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s var(--ease-out), transform 0.4s var(--ease-out);
+}
+
+.hub-panel.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hub-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-  margin-top: 2.5rem;
 }
 
-.appliance-card {
+/* Hub Cards */
+.hub-card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   transition: all var(--transition-base);
-
+  position: relative;
+  overflow: hidden;
 }
 
-.appliance-card:hover {
-  border-color: rgba(201, 168, 105, 0.25);
+.hub-card:hover {
+  border-color: rgba(201, 168, 105, 0.35);
   transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
 }
 
-.appliance-header {
-  margin-bottom: 1rem;
+.hub-card-3d {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
 }
 
-.appliance-tag {
+.hub-card-3d img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+  transition: transform 0.6s var(--ease-out);
+}
+
+.floating-3d {
+  animation: floating3D 4s ease-in-out infinite;
+}
+
+@keyframes floating3D {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.hub-card:hover .hub-card-3d img {
+  transform: scale(1.1) translateY(-4px);
+}
+
+.hub-card-tag {
   font-size: 0.6875rem;
   font-weight: 500;
   letter-spacing: 0.15em;
@@ -759,168 +822,134 @@ input, textarea, select {
   color: var(--color-champagne);
 }
 
-.appliance-title {
+.hub-card-title {
   font-size: 1.1875rem;
   font-weight: 600;
   color: var(--color-offwhite);
-  margin-bottom: 0.75rem;
-  line-height: 1.4;
+  margin: 0.5rem 0;
+  line-height: 1.35;
 }
 
-.appliance-desc {
+.hub-card-snippet {
   font-size: 0.875rem;
   font-weight: 300;
   color: var(--color-muted);
-  line-height: 1.7;
+  line-height: 1.6;
+  flex-grow: 1;
 }
 
-/* ============================================
-   SERVICES
-   ============================================ */
-.services {
-  background: var(--color-surface);
-}
-
-.services-header {
-  margin-bottom: 3rem;
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-}
-
-.service-card {
-  background: var(--color-deep);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: clamp(2rem, 3vw, 2.5rem);
-  transition: all var(--transition-base);
-  position: relative;
-  overflow: hidden;
-}
-
-.service-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: var(--color-champagne);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform var(--transition-base);
-}
-
-.service-card:hover {
-  border-color: rgba(201, 168, 105, 0.25);
-  transform: translateY(-4px);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
-}
-
-.service-card:hover::before {
-  transform: scaleX(1);
-}
-
-.service-number {
-  font-size: 0.75rem;
+.hub-card-btn {
+  font-size: 0.8125rem;
   font-weight: 500;
-  letter-spacing: 0.1em;
   color: var(--color-champagne);
-  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 0;
+  transition: color var(--transition-fast);
 }
 
-.service-title {
-  font-size: 1.25rem;
-  font-weight: 600;
+.hub-card-btn:hover {
   color: var(--color-offwhite);
-  margin-bottom: 1rem;
 }
 
-.service-desc {
-  font-size: 0.9375rem;
-  font-weight: 300;
-  color: var(--color-muted);
-  line-height: 1.7;
-}
-
-/* ============================================
-   TECHNICAL CASES (Prova Social)
-   ============================================ */
-.cases {
-  background: var(--color-deep);
-}
-
-.cases-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  margin-top: 2.5rem;
-}
-
-.case-card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: 2.25rem;
+/* Modal / Drawer Overlay */
+.hub-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 2000;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: all var(--transition-base);
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-base);
+  padding: 2rem;
 }
 
-.case-card:hover {
-  border-color: rgba(201, 168, 105, 0.3);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+.hub-drawer-overlay.active {
+  opacity: 1;
+  pointer-events: all;
 }
 
-.case-brand-tag {
-  display: inline-block;
-  align-self: flex-start;
-  font-size: 0.75rem;
-  font-weight: 600;
+.hub-drawer-content {
+  background: var(--color-surface);
+  border: 1px solid var(--color-champagne);
+  border-radius: var(--radius-lg);
+  padding: clamp(2rem, 5vw, 3.5rem);
+  max-width: 620px;
+  width: 100%;
+  position: relative;
+  transform: scale(0.95) translateY(20px);
+  transition: transform var(--transition-base);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+}
+
+.hub-drawer-overlay.active .hub-drawer-content {
+  transform: scale(1) translateY(0);
+}
+
+.hub-drawer-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  color: var(--color-muted);
+  line-height: 1;
+  transition: color var(--transition-fast);
+}
+
+.hub-drawer-close:hover {
+  color: var(--color-champagne);
+}
+
+.hub-drawer-badge {
+  font-size: 0.6875rem;
+  font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--color-champagne);
-  padding: 0.375rem 0.875rem;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  margin-bottom: 1.25rem;
 }
 
-.case-title {
-  font-size: 1.1875rem;
+.hub-drawer-title {
+  font-size: 1.5rem;
   font-weight: 600;
   color: var(--color-offwhite);
-  margin-bottom: 0.875rem;
-  line-height: 1.4;
+  margin-top: 0.5rem;
 }
 
-.case-desc {
-  font-size: 0.9375rem;
+.hub-drawer-desc {
+  font-size: 1rem;
   font-weight: 300;
   color: var(--color-gray);
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  margin: 1.5rem 0 2rem;
 }
 
-.case-footer {
-  padding-top: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.case-spec {
-  font-size: 0.75rem;
+.hub-drawer-cta {
+  display: inline-block;
+  font-size: 0.8125rem;
   font-weight: 500;
-  color: var(--color-muted);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-deep);
+  background: var(--color-champagne);
+  padding: 0.875rem 1.75rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-base);
+}
+
+.hub-drawer-cta:hover {
+  background: var(--color-offwhite);
 }
 
 /* ============================================
-   PARTNERSHIPS (Arquitetos & Designers)
+   PARTNERSHIPS
    ============================================ */
 .partnerships {
   background: var(--color-surface);
@@ -1348,8 +1377,7 @@ input, textarea, select {
    RESPONSIVE — TABLET
    ============================================ */
 @media (max-width: 1024px) {
-  .appliances-grid,
-  .services-grid {
+  .hub-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -1402,10 +1430,13 @@ input, textarea, select {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .appliances-grid,
-  .services-grid,
-  .cases-grid {
+  .hub-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hub-tabs-container {
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .contact-grid {
@@ -1431,9 +1462,5 @@ input, textarea, select {
 
   .hero-headline-emotional {
     font-size: 1.5rem;
-  }
-
-  .exclusivity-card {
-    padding: 1.5rem;
   }
 }

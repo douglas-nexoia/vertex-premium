@@ -1,6 +1,6 @@
 /* ============================================
    VERTEX — Main JavaScript
-   Animations, Scroll Effects, Menu, Form
+   Animations, Scroll Effects, Menu, Technical Hub, Form
    ============================================ */
 
 (function () {
@@ -54,17 +54,16 @@
 
   menuToggle.addEventListener('click', toggleMobileMenu);
 
-  /* Close mobile menu on link click */
   mobileLinks.forEach(function (link) {
     link.addEventListener('click', function () {
       closeMobileMenu();
     });
   });
 
-  /* Close mobile menu on escape key */
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
-      closeMobileMenu();
+    if (e.key === 'Escape') {
+      if (mobileMenu.classList.contains('open')) closeMobileMenu();
+      closeHubDrawer();
     }
   });
 
@@ -91,13 +90,11 @@
     link.addEventListener('click', handleSmoothScroll);
   });
 
-  /* Also handle navbar logo click */
   var logoLink = document.querySelector('.navbar-logo');
   if (logoLink) {
     logoLink.addEventListener('click', handleSmoothScroll);
   }
 
-  /* Also handle footer links */
   document.querySelectorAll('.footer-link').forEach(function (link) {
     link.addEventListener('click', handleSmoothScroll);
   });
@@ -124,30 +121,79 @@
   });
 
   /* ============================================
-     ACTIVE NAVIGATION HIGHLIGHT
+     TECHNICAL HUB — TABS NAVIGATION
      ============================================ */
-  var sections = document.querySelectorAll('section[id]');
+  var hubTabs = document.querySelectorAll('.hub-tab');
+  var hubPanels = document.querySelectorAll('.hub-panel');
 
-  var sectionObserver = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        var id = entry.target.getAttribute('id');
-        navbarLinks.forEach(function (link) {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === '#' + id) {
-            link.classList.add('active');
-          }
-        });
+  hubTabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      var targetTab = this.getAttribute('data-tab');
+
+      /* Update tab active states */
+      hubTabs.forEach(function (t) { t.classList.remove('active'); });
+      this.classList.add('active');
+
+      /* Update panel active states */
+      hubPanels.forEach(function (panel) {
+        panel.classList.remove('active');
+        if (panel.getAttribute('id') === 'panel-' + targetTab) {
+          panel.classList.add('active');
+        }
+      });
+    });
+  });
+
+  /* ============================================
+     TECHNICAL HUB — DEEP DIVE MODAL DRAWER
+     ============================================ */
+  var hubCards = document.querySelectorAll('.hub-card');
+  var hubDrawer = document.getElementById('hub-drawer');
+  var drawerClose = document.getElementById('hub-drawer-close');
+  var drawerTitle = document.getElementById('drawer-title');
+  var drawerBadge = document.getElementById('drawer-badge');
+  var drawerDesc = document.getElementById('drawer-desc');
+
+  function openHubDrawer(card) {
+    var title = card.getAttribute('data-deep-title') || '';
+    var badge = card.getAttribute('data-deep-badge') || 'Detalhamento Técnico';
+    var desc = card.getAttribute('data-deep-desc') || '';
+
+    if (drawerTitle) drawerTitle.textContent = title;
+    if (drawerBadge) drawerBadge.textContent = badge;
+    if (drawerDesc) drawerDesc.textContent = desc;
+
+    if (hubDrawer) hubDrawer.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeHubDrawer() {
+    if (hubDrawer && hubDrawer.classList.contains('active')) {
+      hubDrawer.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  }
+
+  hubCards.forEach(function (card) {
+    card.addEventListener('click', function () {
+      openHubDrawer(this);
+    });
+  });
+
+  if (drawerClose) {
+    drawerClose.addEventListener('click', function (e) {
+      e.stopPropagation();
+      closeHubDrawer();
+    });
+  }
+
+  if (hubDrawer) {
+    hubDrawer.addEventListener('click', function (e) {
+      if (e.target === hubDrawer) {
+        closeHubDrawer();
       }
     });
-  }, {
-    threshold: 0.3,
-    rootMargin: '-80px 0px -50% 0px'
-  });
-
-  sections.forEach(function (section) {
-    sectionObserver.observe(section);
-  });
+  }
 
   /* ============================================
      CONTACT FORM — WhatsApp Redirect
@@ -165,16 +211,13 @@
     var brand = brandEl.value;
     var message = messageEl.value.trim();
 
-    /* Basic validation */
     if (!name || !phone || !brand) {
-      /* Highlight empty required fields */
       if (!name) nameEl.style.borderColor = '#C9A869';
       if (!phone) phoneEl.style.borderColor = '#C9A869';
       if (!brand) brandEl.style.borderColor = '#C9A869';
       return;
     }
 
-    /* Build WhatsApp message */
     var whatsappText = 'Olá, gostaria de solicitar um atendimento técnico especializado.\n\n';
     whatsappText += 'Nome: ' + name + '\n';
     whatsappText += 'Telefone: ' + phone + '\n';
@@ -184,49 +227,37 @@
     }
 
     var whatsappUrl = 'https://wa.me/5541999999999?text=' + encodeURIComponent(whatsappText);
-
-    /* Open WhatsApp in new tab */
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
 
-    /* Reset form */
     contactForm.reset();
-
-    /* Reset border colors */
     nameEl.style.borderColor = '';
     phoneEl.style.borderColor = '';
     brandEl.style.borderColor = '';
   });
 
-  /* Reset field border on input */
   document.querySelectorAll('.form-input, .form-select, .form-textarea').forEach(function (field) {
-    field.addEventListener('input', function () {
-      this.style.borderColor = '';
-    });
-    field.addEventListener('change', function () {
-      this.style.borderColor = '';
-    });
+    field.addEventListener('input', function () { this.style.borderColor = ''; });
+    field.addEventListener('change', function () { this.style.borderColor = ''; });
   });
 
-  /* ============================================
-     PHONE INPUT MASK (Brazilian format)
-     ============================================ */
+  /* Phone Mask */
   var phoneInput = document.getElementById('form-phone');
-  phoneInput.addEventListener('input', function () {
-    var value = this.value.replace(/\D/g, '');
-    if (value.length <= 2) {
-      this.value = value.length > 0 ? '(' + value : '';
-    } else if (value.length <= 7) {
-      this.value = '(' + value.substring(0, 2) + ') ' + value.substring(2);
-    } else if (value.length <= 11) {
-      this.value = '(' + value.substring(0, 2) + ') ' + value.substring(2, 7) + '-' + value.substring(7);
-    } else {
-      this.value = '(' + value.substring(0, 2) + ') ' + value.substring(2, 7) + '-' + value.substring(7, 11);
-    }
-  });
+  if (phoneInput) {
+    phoneInput.addEventListener('input', function () {
+      var value = this.value.replace(/\D/g, '');
+      if (value.length <= 2) {
+        this.value = value.length > 0 ? '(' + value : '';
+      } else if (value.length <= 7) {
+        this.value = '(' + value.substring(0, 2) + ') ' + value.substring(2);
+      } else if (value.length <= 11) {
+        this.value = '(' + value.substring(0, 2) + ') ' + value.substring(2, 7) + '-' + value.substring(7);
+      } else {
+        this.value = '(' + value.substring(0, 2) + ') ' + value.substring(2, 7) + '-' + value.substring(7, 11);
+      }
+    });
+  }
 
-  /* ============================================
-     DECORATIVE LINE ANIMATIONS ON SCROLL
-     ============================================ */
+  /* Decorative Line Animation */
   var decoLines = document.querySelectorAll('.line-deco');
   var lineObserver = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
