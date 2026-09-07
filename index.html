@@ -8,9 +8,47 @@
   <meta name="theme-color" content="#0A0A0A">
 
   <!-- Security: CSP Meta Tag -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com; img-src 'self' data:; script-src 'self'; frame-ancestors 'none';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com; img-src 'self' data: https://www.google.com https://www.google.com.br https://www.googleadservices.com https://*.googleadservices.com https://googleads.g.doubleclick.net; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://googleads.g.doubleclick.net https://www.googleadservices.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://www.google.com https://www.googleadservices.com https://*.googleadservices.com; frame-ancestors 'none';">
   <meta http-equiv="X-Frame-Options" content="DENY">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17657499894"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17657499894');
+    function reportarConversaoWhatsApp() {
+      if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-17657499894/xaA-CLjxm64bEPah4ONB',
+          'value': 1.0,
+          'currency': 'BRL',
+          'transport_type': 'beacon'
+        });
+      }
+    }
+  </script>
+
+  <!-- Canonical & Schema.org (JSON-LD) -->
+  <link rel="canonical" href="https://vertex-premium.vercel.app/" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "VERTEX — Equipamentos Premium Importados",
+    "description": "Referência técnica em instalação, manutenção e consultoria para Viking, Sub-Zero, Wolf, Miele, Bertazzoni e Gaggenau.",
+    "telephone": "+5511922390857",
+    "url": "https://vertex-premium.vercel.app/",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    }
+  }
+  </script>
 
   <!-- Open Graph -->
   <meta property="og:title" content="VERTEX — Referência Técnica em Equipamentos Premium Importados">
@@ -18,15 +56,25 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
 
-  <!-- Fonts -->
+  <!-- Fonts (Carregamento Assíncrono) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+  </noscript>
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+  <!-- Bloco Semântico Estático para Robôs de Busca, Google Ads e IAs -->
+  <div style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">
+    <h2>VERTEX — Referência Técnica em Equipamentos Premium Importados</h2>
+    <p>Suporte técnico especializado, instalação, manutenção preventiva e diagnóstico avançado para eletrodomésticos de alto padrão: Viking, Sub-Zero, Wolf, Miele, Bertazzoni, Gaggenau, Liebherr, Tecno e Elettromec. Atendimento técnico com peças originais e padrões internacionais de engenharia.</p>
+  </div>
 
   <!-- ========== NAVBAR ========== -->
   <nav class="navbar" id="navbar">
@@ -40,7 +88,7 @@
         <a href="#technical-hub" class="navbar-link">Hub Técnico</a>
         <a href="#partnerships" class="navbar-link">Parcerias</a>
         <a href="#contact" class="navbar-link">Contato</a>
-        <a href="https://wa.me/5541999999999?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20atendimento%20t%C3%A9cnico%20especializado." class="navbar-cta" target="_blank" rel="noopener noreferrer">Solicitar Atendimento</a>
+        <a href="https://wa.me/5511922390857?text=Ol%C3%A1%21%20Vim%20pelo%20site%2C%20gostaria%20de%20um%20atendimento." onclick="reportarConversaoWhatsApp()" class="navbar-cta" target="_blank" rel="noopener noreferrer">Solicitar Atendimento</a>
       </div>
       <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu de navegação">
         <span></span>
@@ -57,7 +105,7 @@
     <a href="#technical-hub" class="mobile-link">Hub Técnico</a>
     <a href="#partnerships" class="mobile-link">Parcerias</a>
     <a href="#contact" class="mobile-link">Contato</a>
-    <a href="https://wa.me/5541999999999?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20atendimento%20t%C3%A9cnico%20especializado." class="mobile-link" target="_blank" rel="noopener noreferrer" style="color: var(--color-champagne);">Solicitar Atendimento</a>
+    <a href="https://wa.me/5511922390857?text=Ol%C3%A1%21%20Vim%20pelo%20site%2C%20gostaria%20de%20um%20atendimento." onclick="reportarConversaoWhatsApp()" class="mobile-link" target="_blank" rel="noopener noreferrer" style="color: var(--color-champagne);">Solicitar Atendimento</a>
   </div>
 
   <!-- ========== HERO ========== -->
@@ -67,11 +115,11 @@
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <img src="assets/images/vertex-logo.png" alt="Vertex" class="hero-logo">
+      <img src="assets/images/vertex-logo.webp" alt="Vertex" class="hero-logo">
       <h1 class="hero-headline-emotional">Cuidamos dos equipamentos mais sofisticados da sua cozinha.</h1>
       <p class="hero-headline-technical">Referência Técnica em Equipamentos Premium Importados</p>
       <div class="hero-line"></div>
-      <a href="https://wa.me/5541999999999?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20atendimento%20t%C3%A9cnico%20especializado." class="hero-cta" target="_blank" rel="noopener noreferrer">Solicitar Atendimento</a>
+      <a href="https://wa.me/5511922390857?text=Ol%C3%A1%21%20Vim%20pelo%20site%2C%20gostaria%20de%20um%20atendimento." onclick="reportarConversaoWhatsApp()" class="hero-cta" target="_blank" rel="noopener noreferrer">Solicitar Atendimento</a>
     </div>
     <div class="hero-scroll">
       <span class="hero-scroll-text">Scroll</span>
@@ -194,7 +242,7 @@
           <div class="hub-grid">
             <div class="hub-card" data-deep-title="Refrigeradores Premium & Side by Side" data-deep-badge="Refrigeração de Alta Precisão" data-deep-desc="Sistemas de refrigeração dual, compressores inverter e vedação magnética de alta eficiência. Trabalhamos com reativação de circuito selado, troca de filtros de ar/água calibrados e alinhamento de portas magnéticas das marcas Sub-Zero, Viking e Liebherr.">
               <div class="hub-card-3d">
-                <img src="assets/images/3d/appliance_refrigerator_3d.png" alt="Refrigeradores Dual-Cooling 3D" class="floating-3d" loading="lazy">
+                <img src="assets/images/3d/appliance_refrigerator_3d.webp" alt="Refrigeradores Dual-Cooling 3D" class="floating-3d" loading="lazy">
               </div>
               <div class="hub-card-body">
                 <span class="hub-card-tag">Refrigeração</span>
@@ -206,7 +254,7 @@
 
             <div class="hub-card" data-deep-title="Adegas Climatizadas de Alta Precisão" data-deep-badge="Controle Térmico & Umidade" data-deep-desc="Adegas com controle eletrônico microprocessado de múltiplas zonas de temperatura, amortecimento de vibração para conservação de rótulos raros e filtros de carvão ativado.">
               <div class="hub-card-3d">
-                <img src="assets/images/3d/appliance_wine_3d.png" alt="Adegas Climatizadas 3D" class="floating-3d" loading="lazy">
+                <img src="assets/images/3d/appliance_wine_3d.webp" alt="Adegas Climatizadas 3D" class="floating-3d" loading="lazy">
               </div>
               <div class="hub-card-body">
                 <span class="hub-card-tag">Climatização</span>
@@ -218,7 +266,7 @@
 
             <div class="hub-card" data-deep-title="Fornos Profissionais & Rangetops" data-deep-badge="Gastronomia de Alto Desempenho" data-deep-desc="Fornos de convecção tripla, queimadores selados de alta caloria (BTU), calibração de termostatos de precisão e aferição de estanqueidade para Wolf, Gaggenau e Bertazzoni.">
               <div class="hub-card-3d">
-                <img src="assets/images/3d/appliance_knob_3d.png" alt="Fornos Profissionais 3D" class="floating-3d" loading="lazy">
+                <img src="assets/images/3d/appliance_knob_3d.webp" alt="Fornos Profissionais 3D" class="floating-3d" loading="lazy">
               </div>
               <div class="hub-card-body">
                 <span class="hub-card-tag">Cocção</span>
@@ -230,7 +278,7 @@
 
             <div class="hub-card" data-deep-title="Cooktops & Coifas de Alta Performance" data-deep-badge="Exhaust & Induction Systems" data-deep-desc="Sistemas de indução magnética de alta frequência, placas de acionamento sensíveis ao toque e coifas industriais de alta vazão acústica para cozinhas gourmet de alto padrão.">
               <div class="hub-card-3d">
-                <img src="assets/images/3d/appliance_cooktop_3d.png" alt="Cooktops e Coifas 3D" class="floating-3d" loading="lazy">
+                <img src="assets/images/3d/appliance_cooktop_3d.webp" alt="Cooktops e Coifas 3D" class="floating-3d" loading="lazy">
               </div>
               <div class="hub-card-body">
                 <span class="hub-card-tag">Indução & Exhaust</span>
@@ -242,7 +290,7 @@
 
             <div class="hub-card" data-deep-title="Lava-Louças & Sistemas Integrados" data-deep-badge="Sanitização & Encastre" data-deep-desc="Lava-louças profissionais com ciclos de alta temperatura para louças delicadas, gavetas aquecidas gourmet e sistemas de automação de água Miele e Gaggenau.">
               <div class="hub-card-3d">
-                <img src="assets/images/3d/appliance_dishwasher_3d.png" alt="Lava Louças 3D" class="floating-3d" loading="lazy">
+                <img src="assets/images/3d/appliance_dishwasher_3d.webp" alt="Lava Louças 3D" class="floating-3d" loading="lazy">
               </div>
               <div class="hub-card-body">
                 <span class="hub-card-tag">Higienização</span>
@@ -259,7 +307,7 @@
           <div class="hub-grid">
             <div class="hub-card" data-deep-title="Diagnóstico Técnico de Precisão" data-deep-badge="Serviço 01" data-deep-desc="Análise lógica com relatórios fotográficos e medição eletrônica de parâmetros de fábrica. Identificamos com exatidão a causa raiz de qualquer anomalia antes de efetuar qualquer substituição.">
               <div class="hub-card-3d">
-                <img src="assets/images/3d/service_diagnostic_3d.png" alt="Diagnóstico 3D" class="floating-3d" loading="lazy">
+                <img src="assets/images/3d/service_diagnostic_3d.webp" alt="Diagnóstico 3D" class="floating-3d" loading="lazy">
               </div>
               <div class="hub-card-body">
                 <span class="hub-card-tag">01 · Análise</span>
@@ -271,7 +319,7 @@
 
             <div class="hub-card" data-deep-title="Instalação Premium Certificada" data-deep-badge="Serviço 02" data-deep-desc="Execução estrita dos manuais técnicos dos fabricantes importados. Verificação técnica de nichos, alinhamento micrométrico, aterramento elétrico e estanqueidade de gás.">
               <div class="hub-card-3d">
-                <img src="assets/images/3d/service_installation_3d.png" alt="Instalação 3D" class="floating-3d" loading="lazy">
+                <img src="assets/images/3d/service_installation_3d.webp" alt="Instalação 3D" class="floating-3d" loading="lazy">
               </div>
               <div class="hub-card-body">
                 <span class="hub-card-tag">02 · Instalação</span>
@@ -283,7 +331,7 @@
 
             <div class="hub-card" data-deep-title="Manutenção Especializada (Preventiva & Corretiva)" data-deep-badge="Serviço 03" data-deep-desc="Utilização exclusiva de peças originais importadas e instrumentação dedicada. Garantimos a manutenção do valor de revenda e durabilidade de longo prazo do equipamento.">
               <div class="hub-card-3d">
-                <img src="assets/images/3d/service_maintenance_3d.png" alt="Manutenção 3D" class="floating-3d" loading="lazy">
+                <img src="assets/images/3d/service_maintenance_3d.webp" alt="Manutenção 3D" class="floating-3d" loading="lazy">
               </div>
               <div class="hub-card-body">
                 <span class="hub-card-tag">03 · Manutenção</span>
@@ -295,7 +343,7 @@
 
             <div class="hub-card" data-deep-title="Consultoria Técnica de Projetos" data-deep-badge="Serviço 04" data-deep-desc="Acompanhamento técnico para proprietários, arquitetos e engenheiros na escolha de pontos de pré-instalação, especificações de carga elétrica e tubulações de exaustão.">
               <div class="hub-card-3d">
-                <img src="assets/images/3d/service_consulting_3d.png" alt="Consultoria 3D" class="floating-3d" loading="lazy">
+                <img src="assets/images/3d/service_consulting_3d.webp" alt="Consultoria 3D" class="floating-3d" loading="lazy">
               </div>
               <div class="hub-card-body">
                 <span class="hub-card-tag">04 · Consultoria</span>
@@ -307,7 +355,7 @@
 
             <div class="hub-card" data-deep-title="Suporte Técnico Dedicado" data-deep-badge="Serviço 05" data-deep-desc="Canal direto com nossos especialistas para esclarecimento de manuseio, parametrização de receitas nos fornos e auxílio operacional para a equipe da residência.">
               <div class="hub-card-3d">
-                <img src="assets/images/3d/service_support_3d.png" alt="Suporte 3D" class="floating-3d" loading="lazy">
+                <img src="assets/images/3d/service_support_3d.webp" alt="Suporte 3D" class="floating-3d" loading="lazy">
               </div>
               <div class="hub-card-body">
                 <span class="hub-card-tag">05 · Suporte</span>
@@ -373,7 +421,7 @@
       <div class="line-deco"></div>
       <p class="hub-drawer-desc" id="drawer-desc">Descrição detalhada...</p>
       <div class="hub-drawer-footer">
-        <a href="https://wa.me/5541999999999?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20atendimento%20t%C3%A9cnico%20relacionado%20a%20este%20item." class="hub-drawer-cta" target="_blank" rel="noopener noreferrer">Solicitar Atendimento sobre este Item</a>
+        <a href="https://wa.me/5511922390857?text=Ol%C3%A1%21%20Vim%20pelo%20site%2C%20gostaria%20de%20um%20atendimento." onclick="reportarConversaoWhatsApp()" class="hub-drawer-cta" target="_blank" rel="noopener noreferrer">Solicitar Atendimento sobre este Item</a>
       </div>
     </div>
   </div>
@@ -411,7 +459,7 @@
         <div class="partnerships-box reveal reveal-delay-3">
           <h3 class="partner-box-title">Suporte desde a Fase de Projeto</h3>
           <p class="partner-box-desc">Analisamos especificações de pré-instalação (pontos elétricos, vazão de exaustão, pressão de água e dimensões de encastre) antes da entrega da obra, garantindo uma instalação impecável sem imprevistos.</p>
-          <a href="https://wa.me/5541999999999?text=Ol%C3%A1%2C%20sou%20profissional%20do%20segmento%20e%20gostaria%20de%20alinhar%20uma%20parceria%20t%C3%A9cnica." class="partner-box-cta" target="_blank" rel="noopener noreferrer">Falar com a Equipe Técnica</a>
+          <a href="https://wa.me/5511922390857?text=Ol%C3%A1%2C%20sou%20profissional%20do%20segmento%20e%20gostaria%20de%20alinhar%20uma%20parceria%20t%C3%A9cnica." onclick="reportarConversaoWhatsApp()" class="partner-box-cta" target="_blank" rel="noopener noreferrer">Falar com a Equipe Técnica</a>
         </div>
       </div>
     </div>
@@ -472,7 +520,7 @@
       <div class="cta-content">
         <h2 class="cta-title reveal">Seu equipamento merece o melhor cuidado técnico</h2>
         <p class="cta-subtitle reveal reveal-delay-1">Fale com nossa equipe e agende um atendimento especializado.</p>
-        <a href="https://wa.me/5541999999999?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20atendimento%20t%C3%A9cnico%20especializado." class="cta-button reveal reveal-delay-2" target="_blank" rel="noopener noreferrer">
+        <a href="https://wa.me/5511922390857?text=Ol%C3%A1%21%20Vim%20pelo%20site%2C%20gostaria%20de%20um%20atendimento." onclick="reportarConversaoWhatsApp()" class="cta-button reveal reveal-delay-2" target="_blank" rel="noopener noreferrer">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           Solicitar Atendimento via WhatsApp
         </a>
@@ -492,11 +540,11 @@
           </div>
           <div class="contact-item reveal reveal-delay-3">
             <span class="contact-item-label">WhatsApp</span>
-            <span class="contact-item-value"><a href="https://wa.me/5541999999999" target="_blank" rel="noopener noreferrer">(41) 99999-9999</a></span>
+            <span class="contact-item-value"><a href="https://wa.me/5511922390857?text=Ol%C3%A1%21%20Vim%20pelo%20site%2C%20gostaria%20de%20um%20atendimento." onclick="reportarConversaoWhatsApp()" target="_blank" rel="noopener noreferrer">(11) 92239-0857</a></span>
           </div>
           <div class="contact-item reveal reveal-delay-4">
             <span class="contact-item-label">Telefone</span>
-            <span class="contact-item-value"><a href="tel:+5541999999999">(41) 99999-9999</a></span>
+            <span class="contact-item-value"><a href="tel:+5511922390857">(11) 92239-0857</a></span>
           </div>
           <div class="contact-item reveal reveal-delay-5">
             <span class="contact-item-label">E-mail</span>

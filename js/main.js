@@ -3,6 +3,21 @@
    Animations, Scroll Effects, Menu, Technical Hub, Form
    ============================================ */
 
+/* ============================================
+   GOOGLE ADS — CONVERSION TRACKING
+   ============================================ */
+function reportarConversaoWhatsApp() {
+  if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+    window.gtag('event', 'conversion', {
+      'send_to': 'AW-17657499894/xaA-CLjxm64bEPah4ONB',
+      'value': 1.0,
+      'currency': 'BRL',
+      'transport_type': 'beacon'
+    });
+  }
+}
+window.reportarConversaoWhatsApp = reportarConversaoWhatsApp;
+
 (function () {
   'use strict';
 
@@ -218,7 +233,7 @@
       return;
     }
 
-    var whatsappText = 'Olá, gostaria de solicitar um atendimento técnico especializado.\n\n';
+    var whatsappText = 'Olá! Vim pelo site, gostaria de um atendimento.\n\n';
     whatsappText += 'Nome: ' + name + '\n';
     whatsappText += 'Telefone: ' + phone + '\n';
     whatsappText += 'Marca do equipamento: ' + brand + '\n';
@@ -226,7 +241,8 @@
       whatsappText += 'Mensagem: ' + message + '\n';
     }
 
-    var whatsappUrl = 'https://wa.me/5541999999999?text=' + encodeURIComponent(whatsappText);
+    reportarConversaoWhatsApp();
+    var whatsappUrl = 'https://wa.me/5511922390857?text=' + encodeURIComponent(whatsappText);
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
 
     contactForm.reset();

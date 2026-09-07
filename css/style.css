@@ -3,8 +3,8 @@
    Referência Técnica em Equipamentos Premium Importados
    ============================================ */
 
-/* --- Google Fonts --- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+/* --- Google Fonts (Carregado de forma assíncrona no index.html) --- */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap'); */
 
 /* --- CSS Reset --- */
 *, *::before, *::after {
